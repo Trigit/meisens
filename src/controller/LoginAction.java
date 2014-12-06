@@ -1,36 +1,39 @@
 package controller;
 
-import java.util.Map;
+import pojo.Message;
+import service.MessageService;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-
-import org.apache.struts2.interceptor.RequestAware;
-
-import utils.QueryUtils;
-
-import com.opensymphony.xwork2.ActionSupport;
-
-@SuppressWarnings({ "serial", "unused" })
+@SuppressWarnings({ "serial", "unused", "rawtypes" })
 public class LoginAction extends BaseAction {
 
 	private String message;
+	private MessageService service;
+
+	public LoginAction() {
+	}
+
+	public void setService(MessageService service) {
+		this.service = service;
+	}
 
 	public void setMessage(String message) {
 		this.message = message;
 	}
 
 	public String login() {
-		this.addActionMessage("addActionMessage");
-		this.addFieldError("errorField", "errorFieldValue");
-		// this.doDefault();
-		String text = this.getText("sdfds");
-		// this.setContainer(null);
+		Message message2 = service.get("3454366575fds7");
+
 		request.put("title", "hala");
 		return SUCCESS;
 	}
 
 	public String login2() {
-		
+		this.addActionMessage("addActionMessage");
+		this.addFieldError("errorField", "errorFieldValue");
+		// this.doDefault();
+		String text = this.getText("sdfds");
+		// this.setContainer(null);
+
 		return SUCCESS;
 	}
 
