@@ -7,16 +7,44 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
 	<bean id="loginAction" class="controller.LoginAction" scope="prototype">
+		<property name="service" ref="messageService"></property>
 		<property name="message">
 			<value>hala</value>
 		</property>
 	</bean>
 
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<bean id="messageService" class="service.MessageService" scope="prototype">
+		<property name="dao" ref="messageDao"></property>
+	</bean>
+
+	<bean id="messageDao" class="dao.MessageDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- Hibernate生成? -->
+	<!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> -->
+	<!-- <property name="configLocation" value="classpath:hibernate.cfg.xml"></property> -->
+	<!-- </bean> -->
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
 	</bean>
 
-	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
+	<!-- 配置事务通知 -->
+	<tx:advice id="advice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- 配置切面表达式, 然后与事务通知的配置结合 -->
+	<aop:config>
+		<aop:advisor advice-ref="advice" pointcut="execution(* dao.MessageDao.*(..))" />
+	</aop:config>
 
 </beans>
