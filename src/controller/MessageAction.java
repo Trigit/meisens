@@ -1,20 +1,34 @@
 package controller;
 
-import service.IService;
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
-import com.opensymphony.xwork2.ActionSupport;
+import javax.annotation.Resource;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import pojo.Message;
+import service.BaseService;
+import service.MessageService;
 
 /**
  * @Class Description:留言管理
  * @author Boki
  * @Date 2014年12月3日 - 上午12:21:47
  */
-@SuppressWarnings("serial")
-public class MessageAction extends ActionSupport {
+@SuppressWarnings({ "serial", "rawtypes", "unused" })
+@Controller
+@Scope("prototype")
+public class MessageAction extends BaseAction {
 
-	private IService service;
+	@Resource(name = "messageService")
+	private MessageService service;
 
-	public String getPicList() {
+	public String search() {
 		// get parameters:pagenum,conditions
 
 		// query from service/dao, get then returning list.
@@ -23,7 +37,15 @@ public class MessageAction extends ActionSupport {
 
 		// point out the target jsp page
 
-		service.getPOList();
+		Message po2 = service.get(Message.class, 345436661);
+
+		Map<String, Object> condition = new HashMap<>();
+		List list = service.getByCondition(condition);
+
+		Message po = new Message("不朽", new BigDecimal(454366), "dfd@etretr",
+				new BigDecimal(454366), "关于明天", "这挺好的呀");
+
+		service.save(po);
 
 		return SUCCESS;
 	}
