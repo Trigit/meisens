@@ -9,12 +9,17 @@ import org.springframework.stereotype.Service;
 
 import dao.BaseDao;
 
+/**
+ * @Class Description:提供常用的逻辑处理
+ * @author Boki
+ * @Date 2014年12月7日 - 下午7:20:55
+ */
 @Service
 @Scope("prototype")
 public class BaseService {
 
 	@Resource(name = "baseDao")
-	BaseDao dao;
+	protected BaseDao dao;
 
 	public boolean save(Object po) {
 		return dao.save(po);
