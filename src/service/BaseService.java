@@ -1,6 +1,7 @@
 package service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -14,6 +15,7 @@ import dao.BaseDao;
  * @author Boki
  * @Date 2014年12月7日 - 下午7:20:55
  */
+@SuppressWarnings("rawtypes")
 @Service
 @Scope("prototype")
 public class BaseService {
@@ -27,5 +29,9 @@ public class BaseService {
 
 	public <T> T get(Class<T> clazz, Serializable id) {
 		return dao.get(clazz, id);
+	}
+
+	public List getAll(Class<?> clazz) {
+		return dao.getAll(clazz);
 	}
 }
