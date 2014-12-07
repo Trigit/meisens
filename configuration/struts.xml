@@ -14,8 +14,12 @@
 			<result name="success" type="dispatcher">/WEB-INF/pages/welcome.jsp</result>
 		</action>
 
-		<action name="search" class="messageAction" method="search">
+		<action name="list" class="messageAction" method="list">
 			<result name="success" type="dispatcher">/WEB-INF/pages/welcome.jsp</result>
+		</action>
+
+		<action name="uikit_*" class="testUIKit" method="{1}">
+			<result name="success" type="dispatcher">/WEB-INF/pages/uikit1.jsp</result>
 		</action>
 
 	</package>

@@ -2,12 +2,16 @@ package controller;
 
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
+
+import service.BaseService;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -22,7 +26,8 @@ public class BaseAction extends ActionSupport implements RequestAware, SessionAw
 	protected Map<String, Object> session;
 	protected Map<String, Object> application;
 
-	protected Object service;
+	@Resource(name = "baseService")
+	protected BaseService service;
 
 	static private ClassPathXmlApplicationContext context;
 	static {

@@ -28,6 +28,12 @@ public class MessageAction extends BaseAction {
 	@Resource(name = "messageService")
 	private MessageService service;
 
+	public String list() {
+		List messageList = service.getAll(Message.class);
+		request.put("messageList", messageList);
+		return SUCCESS;
+	}
+
 	public String search() {
 		// get parameters:pagenum,conditions
 
