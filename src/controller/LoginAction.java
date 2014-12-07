@@ -20,6 +20,7 @@ public class LoginAction extends BaseAction {
 	private MessageService mservice;
 
 	public LoginAction() {
+		
 	}
 
 	public void setService(MessageService service) {

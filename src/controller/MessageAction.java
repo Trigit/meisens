@@ -37,7 +37,7 @@ public class MessageAction extends BaseAction {
 
 		// point out the target jsp page
 
-		Message po2 = service.get(Message.class, 345436661);
+		Message po2 = service.get(345436661);
 
 		Map<String, Object> condition = new HashMap<>();
 		List list = service.getByCondition(condition);
