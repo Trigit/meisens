@@ -149,31 +149,35 @@
 	<!-- 		</div> -->
 
 	<!-- 	</div> -->
-	
-	<table class="uk-table uk-table-hover uk-table-striped ">
-    <caption>...</caption>
-    <thead>
-        <tr>
-            <th>头目</th>
-            <th>头目</th>
-            <th>头目</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <td>血量</td>
-            <td>血量</td>
-            <td>血量</td>
-        </tr>
-    </tfoot>
-    <tbody>
-        <tr>
-            <td><i class="uk-icon-cubes"></i>法力值</td>
-            <td>法力值</td>
-            <td>法力值</td>
-        </tr>
-    </tbody>
-</table>
+
+	<table class="uk-table uk-table-hover uk-table-striped " width="500">
+		<caption>留言管理</caption>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>邮箱</th>
+				<th>内容</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${messageList}" var="msg">
+				<tr>
+					<td><i class="uk-icon-cubes" />${msg.name}</td>
+					<td>${msg.email}</td>
+					<td>${msg.content}</td>
+					<td><a href="javascript:void(0)">编辑</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+
+	<ul class="uk-pagination">
+		<li><a href="#"><i class="uk-icon-step-backward"></i>&nbsp;&nbsp;&nbsp;首页</a></li>
+		<li class="uk-active"><span><i class="uk-icon-chevron-left"></i>&nbsp;&nbsp;&nbsp;上一页</span></li>
+		<li class="uk-disabled"><span>下一页&nbsp;&nbsp;&nbsp;<i class="uk-icon-chevron-right"></i></span></li>
+		<li><span>尾页</span></li>
+	</ul>
 
 </body>
 </html>
