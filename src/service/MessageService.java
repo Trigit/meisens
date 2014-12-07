@@ -1,18 +1,28 @@
 package service;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 
 import pojo.Message;
-import dao.MessageDao;
 
-public class MessageService {
-	MessageDao dao;
+@SuppressWarnings("rawtypes")
+@Service
+@Scope("prototype")
+public class MessageService extends BaseService {
 
-	public void setDao(MessageDao dao) {
-		this.dao = dao;
-	}
+	// @Resource(name = "messageDao")
+	// private MessageDao dao;
 
 	public Message get(Serializable id) {
-		return dao.get(id);
+		return super.get(Message.class, id);
 	}
+
+	public List getByCondition(Map<String, Object> conditionMap) {
+		return dao.getByCondition(Message.class, conditionMap);
+	}
+
 }

@@ -8,13 +8,10 @@ import java.math.BigDecimal;
 
 public class Message implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8563652622145240311L;
+	private static final long serialVersionUID = 8463075275612191915L;
 
 	// Fields
-	private String id;
+	private Integer id;
 	private String name;
 	private BigDecimal mobilePhone;
 	private String email;
@@ -29,6 +26,11 @@ public class Message implements java.io.Serializable {
 	}
 
 	/** full constructor */
+	public Message(String name, int mobilePhone, String email, int phone, String about, String content) {
+		this(name, new BigDecimal(mobilePhone), email, new BigDecimal(phone), about, content);
+	}
+
+	/** full constructor */
 	public Message(String name, BigDecimal mobilePhone, String email, BigDecimal phone, String about, String content) {
 		this.name = name;
 		this.mobilePhone = mobilePhone;
@@ -40,11 +42,11 @@ public class Message implements java.io.Serializable {
 
 	// Property accessors
 
-	public String getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
