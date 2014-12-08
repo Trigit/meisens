@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="access" extends="struts-default" namespace="/">
+
+		<action name="onLogin" class="loginAction" method="execute">
+			<result name="success" type="dispatcher">/WEB-INF/pages/login.jsp</result>
+		</action>
+		<action name="login" class="loginAction" method="login">
+			<result name="success" type="chain">login2</result>
+		</action>
+		<action name="login2" class="controller.LoginAction" method="login2">
+			<result name="success" type="dispatcher">/WEB-INF/pages/welcome.jsp</result>
+		</action>
+
+		<action name="list" class="messageAction" method="list">
+			<result name="success" type="dispatcher">/WEB-INF/pages/welcome.jsp</result>
+		</action>
+
+		<action name="uikit_*" class="testUIKit" method="{1}">
+			<result name="success" type="dispatcher">/WEB-INF/pages/uikit1.jsp</result>
+		</action>
+
+	</package>
+
+</struts>    
