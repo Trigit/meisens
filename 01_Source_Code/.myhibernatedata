@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Sun Dec 07 15:57:32 CST 2014
+genBasicCompId=true
+sessionFactoryName=pojo.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=native
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=/meisens/hibernate.reveng.xml
+configFile=/meisens/configuration/hibernate.cfg.xml
+createConfigFile=false
