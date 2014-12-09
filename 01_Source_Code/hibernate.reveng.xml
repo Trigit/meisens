@@ -9,4 +9,9 @@
 		</primary-key>
 	</table>
 
+<table name="account" catalog="meisens" class="pojo.Account">
+	<primary-key>
+		<generator class="native"></generator>
+	</primary-key>
+</table>
 </hibernate-reverse-engineering>

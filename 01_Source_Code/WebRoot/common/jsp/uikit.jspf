@@ -1,0 +1,13 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%--在使用uikit的jsp中, 引入该片段. 应在head标签内引入.--%>
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/common/uikit-2.8.0/css/uikit.gradient.min.css" />
+<script src="<%=request.getContextPath()%>/common/javascript/core/jquery-1.10.2.js"></script>
+<script src="<%=request.getContextPath()%>/common/uikit-2.8.0/js/uikit.min.js"></script>
+
+<c:set var="webroot" value=" ${pageContext.request.contextPath}"></c:set>
