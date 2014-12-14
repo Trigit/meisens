@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	vertical-align: middle;
+}
+a:hover {
+	cursor: pointer;
+}
+p.topic {
+	font-size: 18px;
+	line-height: 120px;
+	letter-spacing: 2px;
+	color: #555;
+	text-align: center;
+}
+p.topic img {
+	margin-right: 20px;
+}
+p.slogan {
+	font-size: 30px;
+	margin-bottom: 50px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+#banner a {
+	display: inline-block;
+	height: 58px;
+	line-height: 58px;
+	color: #C8DFDD;
+	vertical-align: middle;
+}
+#banner li {
+	float: left;
+}
+#banner li a {
+	display: block;
+	padding: 0 12px;
+	color: #fefefe;
+}
+#banner li a:hover {
+	cursor: pointer;
+	background: #10aDa6;
+}
+/**/
+#cover ul li {
+	float: left;
+	padding: 0 10px;
+}
+#cover ul li a {
+	cursor: pointer;
+}
+#introduction div p {
+	text-indent: 30px;
+}
+/*展示假山工程*/
+#gallery td {
+	cursor: pointer;
+}
+/*联系美森园林*/
+#contact_us p+p+p {
+	margin: 15px;
+	letter-spacing: 1px;
+	color: #656565;
+}
+#contact td {
+	padding: 3px;
+}
+#contact input, #contact textarea {
+	background: #f3f3f3;
+	border: none;
+	width: 100%;
+}
+#contact table div {
+	border: solid 1px #ADADAD;
+	padding: 10px;
+}
+#contact textarea {
+	height: 218px;
+}
+#contact button {
+	height: 50px;
+	width: 130px;
+	border: none;
+	border-radius: 10px;
+	font-size: 15px;
+	margin: 0 7px;
+}
+#contact button:hover {
+	cursor: pointer;
+}
