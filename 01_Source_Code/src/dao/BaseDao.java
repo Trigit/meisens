@@ -1,7 +1,6 @@
 package dao;
 
 import java.io.Serializable;
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;

@@ -14,7 +14,7 @@ import controller.BaseAction;
 public class TestUIKit extends BaseAction {
 
 	public String index() {
-		List messageList = service.getAll(Message.class);
+		List<?> messageList = service.getAll(Message.class);
 		request.put("messageList", messageList);
 		return SUCCESS;
 	}

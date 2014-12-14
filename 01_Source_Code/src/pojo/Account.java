@@ -4,6 +4,7 @@ package pojo;
  * Account entity. @author MyEclipse Persistence Tools
  */
 
+@SuppressWarnings("serial")
 public class Account implements java.io.Serializable {
 
 	// Fields

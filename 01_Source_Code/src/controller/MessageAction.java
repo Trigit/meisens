@@ -45,7 +45,7 @@ public class MessageAction extends BaseAction {
 
 		Message po2 = service.get(345436661);
 
-		Map<String, Object> condition = new HashMap<>();
+		Map<String, Object> condition = new HashMap<String, Object>();
 		List list = service.getByCondition(condition);
 
 		Message po = new Message("不朽", new BigDecimal(454366), "dfd@etretr",

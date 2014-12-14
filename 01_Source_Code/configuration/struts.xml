@@ -19,7 +19,7 @@
 		</action>
 
 		<action name="uikit_*" class="testUIKit" method="{1}">
-			<result name="success" type="dispatcher">/WEB-INF/pages/uikitest/uikit1.jsp</result>
+			<result name="success" type="dispatcher">/pages/meisens141213.html</result>
 		</action>
 
 	</package>
